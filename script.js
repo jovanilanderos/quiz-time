@@ -51,5 +51,17 @@ var questions = [
     displayQuestion();
   }
   
+  function displayQuestion() {
+    var currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    choicesElement.innerHTML = "";
   
-  
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+        var choice = document.createElement("button");
+        choice.textContent = currentQuestion.choices[i];
+        choice.setAttribute("data-index", i);
+        choice.addEventListener("click", handleAnswer);
+        choicesElement.appendChild(choice);
+      }
+    }
+    
