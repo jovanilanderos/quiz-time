@@ -41,5 +41,15 @@ var questions = [
     }
   ];
   
+  startButton.addEventListener("click", startQuiz);
 
+  // Start the quiz
+  function startQuiz() {
+    startButton.classList.add("hidden");
+    questionContainer.classList.remove("hidden");
+    timerInterval = setInterval(updateTimer, 1000);
+    displayQuestion();
+  }
+  
+  
   
