@@ -82,5 +82,31 @@ var questions = [
           displayQuestion();
         }
       }
-      
+      // Update timer
+function updateTimer() {
+    time--;
+    timerElement.textContent = time;
+  
+    if (time <= 0) {
+      endQuiz();
+    }
+  }
+  
+  // End the quiz
+  function endQuiz() {
+    clearInterval(timerInterval);
+    questionContainer.classList.add("hidden");
+    endContainer.classList.remove("hidden");
+    scoreElement.textContent = score;
+  }
+  
+  // Submit initials and score
+  initialsForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var initials = initialsInput.value;
+    // Add code to save initials and score as desired
+  });  
+  
+  
+  
       
