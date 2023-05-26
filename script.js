@@ -64,4 +64,23 @@ var questions = [
         choicesElement.appendChild(choice);
       }
     }
-    
+    function handleAnswer() {
+        var selectedChoice = parseInt(this.getAttribute("data-index"));
+        var currentQuestion = questions[currentQuestionIndex];
+      
+        if (selectedChoice === currentQuestion.correctAnswer) {
+          score++;
+        } else {
+          time -= 10;
+        }
+      
+        currentQuestionIndex++;
+      
+        if (currentQuestionIndex === questions.length || time <= 0) {
+          endQuiz();
+        } else {
+          displayQuestion();
+        }
+      }
+      
+      
