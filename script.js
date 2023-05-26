@@ -106,7 +106,5 @@ function updateTimer() {
     var initials = initialsInput.value;
     // Add code to save initials and score as desired
   });  
-  
-  
-  
+    
       
